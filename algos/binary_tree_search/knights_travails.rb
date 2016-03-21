@@ -52,6 +52,7 @@ class Knight
 
 	end
 	def shortcut
+		#evaluate the min and max of diff paths between start and this is a binary search in itself see notes 
 	end
 
 

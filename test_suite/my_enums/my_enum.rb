@@ -19,11 +19,14 @@ class Array
 		self.my_each { |i| yield(self, i); i+=1 }
 		# yield(self[i] , i ) 
 		# i += 1
-		end
+		
 		self
 	end
 
 	def my_select
+		my_result =[]
+		self.my_each { |i| my_result << i if i == yield(self)  }
+		my_result
 	end
 
 
@@ -45,3 +48,4 @@ end
 a = [1,2,4,5]
  a.my_each {|i| puts i + 1 }
 puts a.my_times
+p a.my_select { |a| a = 6}
